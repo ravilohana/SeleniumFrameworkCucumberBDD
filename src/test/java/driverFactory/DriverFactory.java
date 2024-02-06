@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class DriverFactory {
 
-    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+//    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public static WebDriver initializeDriver(String browserName){
 
@@ -28,16 +28,16 @@ public class DriverFactory {
             default:
                 throw new RuntimeException("Browser name is not proper: " + browserName);
         }
-        DriverFactory.driver.set(driver);
+//        DriverFactory.driver.set(driver);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         return driver;
     }
 
-
-    public static WebDriver getDriver(){
-        return driver.get();
-    }
+//
+//    public static WebDriver getDriver(){
+//        return driver.get();
+//    }
 
 }

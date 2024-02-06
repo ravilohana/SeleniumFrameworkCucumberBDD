@@ -1,5 +1,6 @@
 package pages;
 
+import domainObjects.BillingDetails;
 import org.openqa.selenium.*;
 import org.openqa.selenium.devtools.v85.animation.model.KeyframeStyle;
 import org.openqa.selenium.interactions.Actions;
@@ -125,6 +126,20 @@ public class CheckoutPage extends BasePage{
         return this;
     }
 
+//    public CheckoutPage setBillingDetails(BillingDetails billingDetails)  {
+//        return enterBillingFirstName(billingDetails.getBillingFirstName())
+//                .enterBillingLastName(billingDetails.getBillingLastName())
+//                .enterBillingCompany(billingDetails.getBillingCompanyName())
+//                .selectBillingCountry(billingDetails.getBillingCountryName())
+//                .enterBillingAddressLine1(billingDetails.getBillingAddress1())
+//                .enterBillingAddressLine2(billingDetails.getBillingAddress2())
+//                .enterBillingCity(billingDetails.getBillingCity())
+//                .selectBillingState(billingDetails.getBillingStateName())
+//                .enterBillingZipcode(billingDetails.getBillingZip())
+//                .enterBillingPhoneNo(billingDetails.getBillingPhoneNo())
+//                .enterBillingEmailID(billingDetails.getBillingEmail());
+//    }
+
     public CheckoutPage setBillingDetails(String billingFirstName,String billingLastName,
                                           String billingCompanyName,String billingCountryName,
                                           String billingAddress1,String billingAddress2,
@@ -152,5 +167,6 @@ public class CheckoutPage extends BasePage{
     public String getSuccessMsg(){
         return wait.until(ExpectedConditions.visibilityOf(successMsg)).getText();
     }
+
 
 }
