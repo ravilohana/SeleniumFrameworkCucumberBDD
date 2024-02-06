@@ -40,3 +40,5 @@ build/
 ### Java Rough ###
 
 src/main/java/rough
+ExtentReports
+test-output-thread

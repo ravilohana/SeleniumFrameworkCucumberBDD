@@ -6,12 +6,16 @@ import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
 
-        plugin = {"pretty","html:target/cucumber.html"},
+//        plugin = {"pretty","html:target/cucumber.html"},
        features = {"src/test/resources/Features"},
        // features = {"src/test/resources/Features"},
       //  tags = "@GuestCustomer",
         //glue = {"stepsDefinitions","cucumberHooks"}
-        glue = {"stepsDefinitions","cucumberHooks"}
+        glue = {"stepsDefinitions","cucumberHooks"},
+        plugin = {"pretty","html:target/cucumber.html",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+                "timeline:test-output-thread/"
+        }
 
 
 )
